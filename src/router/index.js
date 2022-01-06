@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '@/views/Home.vue'
+import Map from '@/views/Map'
+import News from '@/views/News'
+import City from '@/views/City'
+import SpringView from '@/views/SpringView'
 
 Vue.use(VueRouter)
 
@@ -10,14 +14,11 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  { path: '/map', name: 'Map', component: Map },
+  { path: '/news', name: 'News', component: News },
+  { path: '/city/:city', name: 'City', component: City },
+  { path: '/spring/:citys', name: 'SpringView', component: SpringView, props: true }
+
 ]
 
 const router = new VueRouter({
