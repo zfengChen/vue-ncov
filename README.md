@@ -31,12 +31,19 @@ npm i build
 serve -s dist
 ```
 
+## 效果图
+![vue-nocv-0fed2e615278bf3e.png](https://www.ipicbed.com/images/2022/01/06/vue-nocv-0fed2e615278bf3e.png)
+![vue-nocv--cbf133fae3ef9f5c.png](https://www.ipicbed.com/images/2022/01/06/vue-nocv--cbf133fae3ef9f5c.png)
+![vue-nocv--.png](https://www.ipicbed.com/images/2022/01/06/vue-nocv--.png)
+![vue-nocv-.png](https://www.ipicbed.com/images/2022/01/06/vue-nocv-.png)
+![vue-nocv-cddf4d6d12ed7174.png](https://www.ipicbed.com/images/2022/01/06/vue-nocv-cddf4d6d12ed7174.png)
+![vue-nocv-5578ed07b919965a.png](https://www.ipicbed.com/images/2022/01/06/vue-nocv-5578ed07b919965a.png)
 
 ## 开发过程中的思维方式
 1. 在Vue框架中，是组件式开发，将组件分离的更加细致一点
 
 
-## 关于组件实例化问题！
+## 关于组件实例化问题
 1. 拆分中组件之后，组件的多次调用，会每一次实例化一个独立的对象
 
 ## 未解决问题
