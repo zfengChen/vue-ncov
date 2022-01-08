@@ -10,7 +10,7 @@ module.exports = {
       }
     }
   },
-  // publicPath: process.env.NODE_ENV === 'production' ? '/dist' : './',
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue-ncov' : '/',
   configureWebpack: {
     performance: {
       hints: 'warning',
