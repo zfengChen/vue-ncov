@@ -9,8 +9,9 @@ import SpringView from '@/views/SpringView'
 Vue.use(VueRouter)
 
 const routes = [
+  { path: '/', redirect: '/home' },
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: Home
   },

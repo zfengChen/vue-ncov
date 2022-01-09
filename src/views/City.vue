@@ -15,32 +15,30 @@ export default {
   mounted () {
     const currentCity = this.$route.params.city
     this.$api
-      .getCaseNum({
-        key: '171e165a7d991c5f6ecd5194c54778ef'
-      })
+      .getCaseNum()
       .then((res) => {
-        // res.length 改成 res.newslist.length
-        for (let i = 0; i < res.length; i++) {
-          if (currentCity === res.newslist[i].provinceShortName) {
-            for (let j = 0; j < res.newslist[i].cities.length; j++) {
+        // res.length 改成 res.retdata.length
+        for (let i = 0; i < res.retdata.length; i++) {
+          if (currentCity === res.retdata[i].xArea) {
+            for (let j = 0; j < res.retdata[i].subList.length; j++) {
               var temp = {}
-              if (res.newslist[i].provinceShortName !== '北京') {
+              if (res.retdata[i].xArea !== '北京') {
                 temp = {
-                  name: res.newslist[i].cities[j].cityName,
-                  value: res.newslist[i].cities[j].currentConfirmedCount,
+                  name: res.retdata[i].subList[j].city,
+                  value: res.retdata[i].subList[j].curConfirm,
                   itemStyle: {
                     normal: {
-                      areaColor: this.setColor(res.newslist[i].cities[j].currentConfirmedCount)
+                      areaColor: this.setColor(res.retdata[i].subList[j].curConfirm)
                     }
                   }
                 }
               } else {
                 temp = {
-                  name: res.newslist[i].cities[j].cityName + '市',
-                  value: res.newslist[i].cities[j].currentConfirmedCount,
+                  name: res.retdata[i].subList[j].city + '市',
+                  value: res.retdata[i].subList[j].curConfirm,
                   itemStyle: {
                     normal: {
-                      areaColor: this.setColor(res.newslist[i].cities[j].currentConfirmedCount)
+                      areaColor: this.setColor(res.retdata[i].subList[j].curConfirm)
                     }
                   }
                 }

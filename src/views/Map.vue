@@ -33,35 +33,21 @@ export default {
     this.initWordData()
   },
   methods: {
-    // 接口维护中 2022-1-5
-    // async initCityData () {
-    //   const res = await this.$api.getCaseNum({
-    //     // 该接口在维护 key值需要改
-    //     key: '171e165a7d991c5f6ecd5194c54778ef'
-    //   })
-    //   this.cityMapData = res
-    //   console.log(res)
-    // }
     /*
       国内数据
     */
-    initCityData () {
-      this.$api
-        .getCaseNum({
-          key: '171e165a7d991c5f6ecd5194c54778ef'
-        })
-        .then((res) => {
-          // 这里记得是 res.newslist.length
-          // 因为接口维护 没有 newslist
-          for (let i = 0; i < res.length; i++) {
-            var temp = {
-              name: res.newslist[i].provinceShortName,
-              value: res.newslist[i].currentConfirmedCount
-            }
-            this.cityMapData.push(temp)
-          }
-          this.$charts.chinaMap('chinaMap', this.cityMapData)
-        })
+    async initCityData () {
+      const res = await this.$api.getCaseNum()
+      // console.log(res)
+      for (let i = 0; i < res.retdata.length; i++) {
+        var temp = {
+          name: res.retdata[i].xArea,
+          value: res.retdata[i].curConfirm
+        }
+        // console.log(temp)
+        this.cityMapData.push(temp)
+      }
+      this.$charts.chinaMap('chinaMap', this.cityMapData)
     },
     /*
       海外数据

@@ -11,9 +11,7 @@ const api = {
     省市疫情
   */
   getCaseNum (params) {
-    return get('http://api.tianapi.com/txapi/ncovcity/index', {
-      params
-    })
+    return get('http://iwenwiki.com/wapicovid19/all.php')
   },
   /*
     海外疫情
